@@ -1,6 +1,7 @@
 #include "MazeView.hpp"
 #include <QFile>
 #include <QGraphicsLineItem>
+#include <iostream>
 MazeView::MazeView(int rows, int cols, qreal pixelSize)
     : QGraphicsView()
     , rows{rows}
@@ -48,6 +49,8 @@ void MazeView::loadEdge(int from, int to)
         }
         else
         {
+            std::cout << "argument range error: " << from << ", " << to
+                      << std::endl;
             throw QString("Argument range error");
         }
     }
@@ -65,11 +68,15 @@ void MazeView::loadEdge(int from, int to)
         }
         else
         {
+            std::cout << "argument range error: " << from << ", " << to
+                      << std::endl;
             throw QString("Argument range error");
         }
     }
     else
     {
+        std::cout << "argument range error: " << from << ", " << to
+                  << std::endl;
         throw QString("Argument range error");
     }
 }

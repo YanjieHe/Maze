@@ -4,7 +4,8 @@ using namespace std;
 
 int main()
 {
-    //    TestRecursiveBacktracker();
+    TestRecursiveBacktracker();
     TestKruskal();
+    TestPrim();
     return 0;
 }

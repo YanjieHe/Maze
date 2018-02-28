@@ -54,12 +54,14 @@ SOURCES       = ../MazeGenerationAlgorithm/main.cpp \
 		../MazeGenerationAlgorithm/RecursiveBacktracker.cpp \
 		../MazeGenerationAlgorithm/UndirectedGraph.cpp \
 		../MazeGenerationAlgorithm/Test.cpp \
-		../MazeGenerationAlgorithm/Kruskal.cpp 
+		../MazeGenerationAlgorithm/Kruskal.cpp \
+		../MazeGenerationAlgorithm/Prim.cpp 
 OBJECTS       = main.o \
 		RecursiveBacktracker.o \
 		UndirectedGraph.o \
 		Test.o \
-		Kruskal.o
+		Kruskal.o \
+		Prim.o
 DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		/usr/lib/qt/mkspecs/common/unix.conf \
 		/usr/lib/qt/mkspecs/common/linux.conf \
@@ -260,11 +262,13 @@ DIST          = /usr/lib/qt/mkspecs/features/spec_pre.prf \
 		../MazeGenerationAlgorithm/MazeGenerationAlgorithm.pro RecursiveBacktracker.hpp \
 		UndirectedGraph.hpp \
 		Test.hpp \
-		Kruskal.hpp ../MazeGenerationAlgorithm/main.cpp \
+		Kruskal.hpp \
+		Prim.hpp ../MazeGenerationAlgorithm/main.cpp \
 		../MazeGenerationAlgorithm/RecursiveBacktracker.cpp \
 		../MazeGenerationAlgorithm/UndirectedGraph.cpp \
 		../MazeGenerationAlgorithm/Test.cpp \
-		../MazeGenerationAlgorithm/Kruskal.cpp
+		../MazeGenerationAlgorithm/Kruskal.cpp \
+		../MazeGenerationAlgorithm/Prim.cpp
 QMAKE_TARGET  = MazeGenerationAlgorithm
 DESTDIR       = 
 TARGET        = MazeGenerationAlgorithm
@@ -729,12 +733,17 @@ UndirectedGraph.o: ../MazeGenerationAlgorithm/UndirectedGraph.cpp ../MazeGenerat
 Test.o: ../MazeGenerationAlgorithm/Test.cpp ../MazeGenerationAlgorithm/Test.hpp \
 		../MazeGenerationAlgorithm/Kruskal.hpp \
 		../MazeGenerationAlgorithm/UndirectedGraph.hpp \
+		../MazeGenerationAlgorithm/Prim.hpp \
 		../MazeGenerationAlgorithm/RecursiveBacktracker.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Test.o ../MazeGenerationAlgorithm/Test.cpp
 
 Kruskal.o: ../MazeGenerationAlgorithm/Kruskal.cpp ../MazeGenerationAlgorithm/Kruskal.hpp \
 		../MazeGenerationAlgorithm/UndirectedGraph.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Kruskal.o ../MazeGenerationAlgorithm/Kruskal.cpp
+
+Prim.o: ../MazeGenerationAlgorithm/Prim.cpp ../MazeGenerationAlgorithm/Prim.hpp \
+		../MazeGenerationAlgorithm/UndirectedGraph.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Prim.o ../MazeGenerationAlgorithm/Prim.cpp
 
 ####### Install
 

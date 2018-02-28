@@ -1,5 +1,6 @@
 #include "Test.hpp"
 #include "Kruskal.hpp"
+#include "Prim.hpp"
 #include "RecursiveBacktracker.hpp"
 #include <cstdlib>
 #include <iostream>
@@ -27,5 +28,18 @@ void TestKruskal()
     kruskal.WriteToFile("maze_kruskal.txt");
     std::system("../"
                 "build-MazeGUI-Desktop-Debug/MazeGUI maze_kruskal.txt &");
+    cout << "finished" << endl;
+}
+
+void TestPrim()
+{
+    cout << "start prim" << endl;
+    int rows = 100;
+    int cols = 100;
+    Prim prim(rows, cols, 10);
+    prim.Generate();
+    prim.WriteToFile("maze_prim.txt");
+    std::system("../"
+                "build-MazeGUI-Desktop-Debug/MazeGUI maze_prim.txt &");
     cout << "finished" << endl;
 }
